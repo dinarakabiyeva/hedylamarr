@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lamarr Legacy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #333; background: #fefaf6; }
+    h1,h2,h3 { font-family: 'Josefin Sans', sans-serif; color: #333; font-weight: 700; margin: 20px 0; }
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f2ed;
+    }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #f5f2ed; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #333; }
+    .nav-links { list-style: none; display: flex; gap: 20px; }
+    .nav-links a { color: #333; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    .nav-links a:hover { color: #b98f6e; }
+    .nav-links a.active { color: #b98f6e; border-bottom: 2px solid #b98f6e; }
+
+    .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #b98f6e; color: #fff; text-decoration: none; border-radius: 4px; transition: background 0.3s ease, transform 0.2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(1px); }
+
+    .hero {
+      background: url('https://di-uploads-pod36.dealerinspire.com/everettcadillac/uploads/2023/03/Hedi-Lamar-math.jpg') center/cover no-repeat;
+      color: #fff; height: 80vh;
+      display: flex; flex-direction: column; justify-content: center; text-align: center; position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); z-index: 1;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 800px; margin: auto; padding: 40px 20px;
+    }
+
+    .section { padding: 60px 20px; }
+    .bg-light { background: #f9f6f1; }
+    .container { max-width: 1000px; margin: auto; }
+
+    /* Films */
+    .work-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .work-list img {
+      width: 100%; height: auto;
+      border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Knowledge & Representation grids */
+    .knowledge-grid,
+    .representation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .knowledge-card {
+      background: #fff;
+      border: 1px solid #e0d6ca;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* для reveal */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    }
+    .knowledge-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .knowledge-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    /* плавная прокрутка по якорям */
+    html { scroll-behavior: smooth; }
+
+    /* back-to-top */
+    #back-to-top {
+      position: fixed; right: 20px; bottom: 20px;
+      padding: 10px; border: none; border-radius: 4px;
+      background: #b98f6e; color: #fff; cursor: pointer;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.3s ease;
+    }
+    #back-to-top.show {
+      opacity: 1; visibility: visible;
+    }
+
+    /* для плотов, если они есть */
+    .plots img {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .plots img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Lamarr Legacy</div>
+    <ul class="nav-links">
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#films">Selected Filmography</a></li>
+      <li><a href="#inventor">Inventor</a></li>
+      <li><a href="#knowledge">Knowledge Organization</a></li>
+      <li><a href="#representation">Knowledge Representation</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </header>
+
+  <!-- Intro / Hero -->
+  <section id="intro" class="hero">
+    <div class="hero-content">
+      <h1>Hedy Lamarr</h1>
+      <p>Often called “The Most Beautiful Woman in Film,” Hedy Lamarr’s beauty and screen presence made her one of the most popular actresses of her day.
+        She was born Hedwig Eva Maria Kiesler on November 9, 1914 in Vienna, Austria. At 17, she starred in her first film, a German project called <em>Geld auf der Straße</em>. 
+        The 1932 film <em>Ekstase</em> brought her to Hollywood</p>
+      <a href="#films" class="btn">Learn more</a>
+    </div>
+  </section>
+
+  <!-- Films -->
+  <section id="films" class="section container">
+    <h2>Selected Filmography</h2>
+    <div class="work-list">
+      <div>
+        <img src="https://www.hedylamarr.com/wp-content/uploads/2020/09/Algiers-1938-520x777.jpg" alt="Algiers poster">
+        <h3>Algiers (1938)</h3>
+        <p>Hedy Lamarr stars as Gaby alongside Charles Boyer in her Hollywood debut.</p>
+      </div>
+      <div>
+        <img src="https://www.hedylamarr.com/wp-content/uploads/2020/09/Boom-Town-1940-520x784.jpg" alt="Boom Town poster">
+        <h3>Boom Town (1940)</h3>
+        <p>A drama about oil wildcatters starring Clark Gable, Spencer Tracy, and Hedy Lamarr.</p>
+      </div>
+      <div>
+        <img src="https://www.hedylamarr.com/wp-content/uploads/2020/09/White-Cargo-1942-520x787.jpg" alt="White Cargo poster">
+        <h3>White Cargo (1942)</h3>
+        <p>Lamarr plays Tondelayo in a melodrama set in an African rubber plantation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inventor -->
+  <section id="inventor" class="section bg-light container">
+    <h2>Early Life and Rise to Stardom</h2>
+    <p>
+      Hedy Lamarr (born Hedwig Eva Maria Kiesler; 1914–2000) was an Austrian-American film actress and inventor. From a young age, she showed a fascination with mechanics, famously building a homemade electric motor at age 12. She first gained international attention in Europe through controversial roles in films such as *Ecstasy* (1933) before relocating to Hollywood, where she became one of the most glamorous and recognized stars of the Golden Age of cinema.
+    </p>
+    <img src="images/image.png" alt="Patent illustration" style="width:100%; border-radius:8px; margin-top:20px;">
+      <h2>Inventive Talent and Enduring Legacy</h2>
+      <p>
+      In 1942, together with composer George Antheil, Lamarr co-patented a “frequency-hopping” communication system designed to guide torpedoes without enemy interception. Although her innovation went largely unrecognized at the time, it laid the groundwork for modern wireless technologies—Wi-Fi, Bluetooth, and GPS all owe a debt to her pioneering work. Today, Lamarr is celebrated not only for her on-screen beauty but also as a trailblazing inventor whose contributions revolutionized secure communications.
+      </p>
+  </section>
+
+  <!-- Knowledge Organization -->
+  <section id="knowledge" class="section container">
+    <h2>Knowledge Organization</h2>
+    <div class="knowledge-grid">
+      <div class="knowledge-card">
+        <h3>📘 E/R Model</h3>
+        <p>Representation of entities and relationships in Lamarr’s biography</p>
+        <a href="e_r_model.html" class="btn">Learn More</a>
+      </div>
+      <div class="knowledge-card">
+        <h3>🗂 Metadata Alignment</h3>
+        <p>Integration of vocabularies for describing Lamarr’s artifacts</p>
+        <a href="metadata.html" class="btn">Learn More</a>
+      </div>
+      <div class="knowledge-card">
+        <h3>📑 Theoretical Model</h3>
+        <p>Structured representation of heritage resources        </p>
+        <a href="theoretical.html" class="btn">Learn More</a>
+      </div>
+      <div class="knowledge-card">
+        <h3>🧠 Conceptual Model</h3>
+        <p>Use of CIDOC CRM and schema.org standards for interoperability        </p>
+        <a href="conceptual.html" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Representation -->
+  <section id="representation" class="section bg-light container">
+    <h2>Knowledge Representation</h2>
+    <div class="representation-grid">
+      <div class="knowledge-card">
+        <h3>📄 CSV Data Table</h3>
+        <p>CSV-file with data about Hedy Lamarr</p>
+        <a href="KnowRepr.csv" class="btn">Download CSV</a>
+      </div>
+      <div class="knowledge-card">
+        <h3>💡 CSV → RDF</h3>
+        <p>RDF triplets based on CSV table.</p>
+        <a href="CSVhedyRDF.py" class="btn">View python file</a>
+        <a href="hedy_lamarr_knowledge.ttl" class="btn">View TTL-file</a>
+      </div>
+      <div class="knowledge-card">
+        <h3>📝 TEI/XML Document</h3>
+        <p>XML file of quotes from the book "Hedy Lamarr: The Most Beautiful Woman in Film" by Ruth Barton</p>
+        <a href="tei1.xml" class="btn">View the file</a>
+      </div>
+      <div class="knowledge-card">
+        <h3>🔨 XML → HTML </h3>
+        <p>Transformation XML-file of book sample to HTML&RDF</p>
+        <a href="HedyLamarr.xsl" class="btn">View XSL file</a>
+        <a href="hedyhtml.html" class="btn">View HTML file</a>
+      </div>
+      <div class="knowledge-card">
+        <h3>🔨 XML → RDF</h3>
+        <p>Transformation XML-file of book sample to RDF</p>
+        <a href="XML_hedy_RDF.py" class="btn">View Python code</a>
+        <a href="hedy_lamarr.ttl" class="btn">View final TTL file</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Lamarr Legacy
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

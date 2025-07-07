@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lamarr Legacy – About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #333; background: #fefaf6; }
+    h1,h2,h3 { font-family: 'Josefin Sans', sans-serif; color: #333; font-weight: 700; margin: 20px 0; }
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f2ed;
+    }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #f5f2ed; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #333; }
+    .nav-links { list-style: none; display: flex; gap: 20px; }
+    .nav-links a { color: #333; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    .nav-links a:hover { color: #b98f6e; }
+    .nav-links a.active { color: #b98f6e; border-bottom: 2px solid #b98f6e; }
+
+    .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    h1 { font-family: 'Josefin Sans', sans-serif; margin-bottom: 10px; }
+    .underline { width: 50px; height: 3px; background: #b98f6e; margin-bottom: 20px; }
+    p { margin-bottom: 20px; }
+    em { font-style: italic; }
+
+    .team { margin-top: 40px; }
+    .team h2 { font-family: 'Josefin Sans', sans-serif; margin-bottom: 10px; }
+    .members { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
+    .member { text-align: center; }
+    .member img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .member p { margin-top: 10px; }
+  </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Lamarr Legacy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Intro</a></li>
+          <li><a href="index.html#films">Selected Filmography</a></li>
+          <li><a href="index.html#inventor">Inventor</a></li>
+          <li><a href="index.html#knowledge">Knowledge Organization</a></li>
+          <li><a href="index.html#representation">Knowledge Representation</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </header>
+
+  <main class="container">
+    <h1>About</h1>
+    <div class="underline"></div>
+    <p><em>This website was created as part of the course “Organization and Digital Methods in the Cultural Heritage Domain” at the University of Bologna (2025).</em></p>
+    <p>The project explores the life and legacy of Hedy Lamarr, combining cinematic history and her groundbreaking inventions. It showcases curated resources—from films and photographs to technical patents—semantically described with linked data standards.</p>
+
+    <section class="team">
+      <h2>Team</h2>
+      <p>The website was developed by students from the Digital Humanities and Digital Knowledge Master’s program at the University of Bologna, with academic supervision by Professor Francesca Tomasi.</em>.</p>
+      <div class="members">
+        <div class="member">
+          <img src="images/dinara.png" alt="Team member photo" />
+          <p>Kabiyeva Dinara</p>
+          <p>graduated from the Faculty of Foreign Languages at Kazakh-American Free University (KAFU) in East Kazakhstan. Currently studying in the Digital Humanities and Digital Knowledge Master’s program at the University of Bologna. Interests include web development, interaction design, cultural heritage, and traveling.</p>
+        </div>
+        <div class="member">
+          <img src="images/image.png" alt="Team member photo" />
+          <p>Student B</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; 2025 Lamarr Legacy</footer>
+</body>
+</html>

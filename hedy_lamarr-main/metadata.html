@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistic 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stats.css">
+</head>
+<body>
+  <header>
+    <h1>🗂 Metadata Alignment</h1>
+  </header>
+  <main>
+    <img src="images/plot_1.png" alt="Plot 1">
+
+      <table>
+        <thead>
+          <tr><th>#</th><th>Item Type</th><th>Example</th><th>Provider</th><th>Standard</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Film</td><td>Algiers (1938)</td><td>IMDb</td><td>Schema.org</td></tr>
+          <tr><td>2</td><td>Film</td><td>Samson and Delilah (1949)</td><td>Library of Congress</td><td>MARC21</td></tr>
+          <tr><td>3</td><td>Patent</td><td>Secret Communication System</td><td>USPTO</td><td>XML</td></tr>
+          <tr><td>4</td><td>Film</td><td>Come Live with Me (1941)</td><td>TCM</td><td>Schema.org</td></tr>
+          <tr><td>5</td><td>Film</td><td>Bombshell: The Hedy Lamarr Story (2017)</td><td>Europeana</td><td>EDM</td></tr>
+          <tr><td>6</td><td>Film</td><td>Boom Town (1940)</td><td>BFI</td><td>MARC21</td></tr>
+          <tr><td>7</td><td>Photograph</td><td>Hedy Lamarr Portrait (1940s)</td><td>Getty Images</td><td>VRA Core</td></tr>
+          <tr><td>8</td><td>Film</td><td>Ecstasy (1933)</td><td>Deutsche Kinemathek</td><td>CIDOC CRM</td></tr>
+          <tr><td>9</td><td>Biographical Text</td><td>Hedy Lamarr: The Most Beautiful Woman in Film</td><td>Internet Archive</td><td>Dublin Core</td></tr>
+          <tr><td>10</td><td>Film</td><td>Ziegfeld Girl (1941)</td><td>Wikidata</td><td>RDF</td></tr>
+          <tr><td>11</td><td>Archival Document</td><td>Hedy Lamarr’s FBI File</td><td>U.S. National Archives</td><td>EAC-CPF</td></tr>
+          <tr><td>12</td><td>Film</td><td>The Heavenly Body (1944)</td><td>MGM Archives / Warner Bros.</td><td>PBCore</td></tr>
+          <tr><td>13</td><td>Audio Recording</td><td>Frequency Hopping (Tech Demo)</td><td>Stanford University Archives</td><td>MODS</td></tr>
+          <tr><td>14</td><td>Film</td><td>Dishonored Lady (1947)</td><td>Internet Archive</td><td>Dublin Core</td></tr>
+          <tr><td>15</td><td>Film</td><td>The Strange Woman (1946)</td><td>Film Noir Foundation</td><td>Schema.org</td></tr>
+        </tbody>
+      </table>
+  <h2>Metadata Alignment</h2>
+  <h3>WHO</h3>
+  <table>
+    <thead>
+      <tr><th>Property</th><th>DCTerms</th><th>MMD</th><th>Schema.org</th><th>MARC21</th><th>CDWA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Creator</td><td>creator</td><td>&lt;artist&gt;&lt;name&gt;</td><td>CreativeWork.creator</td><td>100 1#$a</td><td>Creator description</td></tr>
+      <tr><td>Publisher</td><td></td><td>publisher&lt;label&gt;</td><td>CreativeWork.publisher</td><td>264 #0$b</td><td>Creator identity</td></tr>
+      <tr><td>Contributor</td><td>contributor</td><td>&lt;name&gt;&lt;namePart&gt;</td><td>CreativeWork.contributor</td><td>700 1#$a</td><td>Creator Role</td></tr>
+      <tr><td>Institution</td><td>rightsHolder</td><td>N/A</td><td>CreativeWork.archivedAt</td><td>561 $5</td><td>Owner/Agent</td></tr>
+    </tbody>
+  </table>
+  <h3>WHERE</h3>
+  <table>
+    <thead>
+      <tr><th>Property</th><th>DCTerms</th><th>MMD</th><th>Schema.org</th><th>MARC21</th><th>CDWA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Place of Production</td><td>coverage.spatial</td><td>&lt;place-list&gt;&lt;place-element&gt;</td><td>Movie.countryOfOrigin</td><td>264 #0$a</td><td>Creation Place/Original Location</td></tr>
+      <tr><td>Current Location</td><td>LocationPeriodOrJurisdiction</td><td>N/A</td><td>Place</td><td>852 $a</td><td>Current Location Description</td></tr>
+      <tr><td>Place Depicted</td><td>coverage.spatial</td><td>N/A</td><td>CreativeWork.contentLocation</td><td>651 $a</td><td>Place/Location Label</td></tr>
+    </tbody>
+  </table>
+  <h3>WHEN</h3>
+  <table>
+    <thead>
+      <tr><th>Property</th><th>DCTerms</th><th>MMD</th><th>Schema.org</th><th>MARC21</th><th>CDWA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Creation Date</td><td>date.created</td><td>&lt;release&gt;&lt;date&gt;</td><td>CreativeWork.dateCreated</td><td>264 #0$c</td><td>Creation Date</td></tr>
+      <tr><td>Publication Date</td><td>date.issue</td><td>N/A</td><td>CreativeWork.datePublished</td><td>264 #1$c</td><td>Date Qualifier</td></tr>
+      <tr><td>Period Depicted</td><td>coverage.temporal</td><td>N/A</td><td>CreativeWork.temporalCoverage</td><td>045</td><td>Styles/Periods</td></tr>
+    </tbody>
+  </table>
+  <h3>WHAT</h3>
+  <table>
+    <thead>
+      <tr><th>Property</th><th>DCTerms</th><th>MMD</th><th>Schema.org</th><th>MARC21</th><th>CDWA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Title</td><td>title</td><td>&lt;release&gt;&lt;title&gt;</td><td>Thing.name</td><td>130 $a</td><td>Title Text</td></tr>
+      <tr><td>Identifier</td><td>identifier</td><td>&lt;track.id&gt;</td><td>Thing.identifier</td><td>020-024</td><td>Repository Numbers</td></tr>
+      <tr><td>Description</td><td>description</td><td>N/A</td><td>Thing.description</td><td>3XX</td><td>Descriptive Note</td></tr>
+      <tr><td>Subject</td><td></td><td>subject</td><td>CreativeWork.about</td><td>6XX</td><td>Subject Display</td></tr>
+      <tr><td>Language</td><td>language</td><td>&lt;work&gt;&lt;language-list&gt;</td><td>CreativeWork.inLanguage</td><td>041</td><td>Inscription Language</td></tr>
+      <tr><td>Technique</td><td>type</td><td>&lt;genre-list&gt;&lt;genre&gt;</td><td>CreativeWork.genre</td><td>340 $d</td><td>Materials/Techniques</td></tr>
+    </tbody>
+  </table>
+
+  </main>
+  <footer>
+    &copy; 2025 Hedy Lamarr Legacy Project
+  </footer>
+</body>
+</html>
